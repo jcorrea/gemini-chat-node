@@ -13,5 +13,3 @@ export function fazerPergunta(pergunta) {
     });
   });
 }
-
-//module.exports = { fazerPergunta };

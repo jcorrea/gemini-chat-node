@@ -1,26 +1,4 @@
-import { fazerPergunta } from "./pergunta.js";
-
-async function principal(){
-    let escolha = await fazerPergunta(`Escolha uma das opções abaixo: \n
-      1. Fazer uma pergunta sobre finanças da TI\n
-      2. Consultar sobre finanças da TI\n
-      Opção desejada:`);
-
-      if (escolha == 1){
-        const { perguntar } = await import("./perguntar.js");
-        perguntar();
-      }
-      else if (escolha == 2){
-        const { consultar } = await import("./consultar.js");
-        consultar();
-      }
-      else{
-        console.log("Opção inválida");
-      }
-}
-
-principal().catch(console.error);
-/*import dotenv from "dotenv";
+import dotenv from "dotenv";
 dotenv.config();
 import { inicializaModelo } from "./modelo.js";
 import { fazerPergunta } from "./pergunta.js";
@@ -35,7 +13,7 @@ const generationConfig = {
     responseMimeType: "text/plain",
   };
 
-async function main(){
+export async function consultar(){
     
     const chatSession = model.startChat({
         generationConfig,
@@ -74,4 +52,4 @@ async function main(){
     console.log(result.response.text());
 }
 
-main().catch(console.error);*/
+consultar().catch(console.error);
