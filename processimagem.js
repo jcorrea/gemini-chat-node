@@ -1,35 +1,11 @@
-import { fazerPergunta } from "./pergunta.js";
-
-async function principal(){
-    let escolha = await fazerPergunta(`Escolha uma das opções abaixo: \n
-      1. Fazer uma pergunta sobre finanças da TI\n
-      2. Consultar sobre finanças da TI\n
-      3. Ver informações de imagem\n
-      Opção desejada:`);
-
-      if (escolha == 1){
-        const { perguntar } = await import("./perguntar.js");
-        perguntar();
-      }
-      else if (escolha == 2){
-        const { consultar } = await import("./consultar.js");
-        consultar();
-      }else if (escolha == 3){
-          const { processImagem } = await import("./processimagem.js");
-          processImagem();
-      }
-      else{
-        console.log("Opção inválida");
-      }
-}
-
-principal().catch(console.error);
-/*import dotenv from "dotenv";
+import dotenv from "dotenv";
 dotenv.config();
 import { inicializaModelo } from "./modelo.js";
 import { fazerPergunta } from "./pergunta.js";
+import { GoogleAIFileManager } from "@google/generative-ai/server"; // Importe GoogleAIFileManager
+import { FileState } from "@google/generative-ai/server"; // Importe FileState
 
-const model = await inicializaModelo("gemini-2.0-flash");
+const model = await inicializaModelo("gemini-1.5-flash");
 
 const generationConfig = {
     temperature: 1,
@@ -39,7 +15,8 @@ const generationConfig = {
     responseMimeType: "text/plain",
   };
 
-async function main(){
+  
+export async function processImagem(){
     
     const chatSession = model.startChat({
         generationConfig,
@@ -71,11 +48,52 @@ async function main(){
         ],
       });
 
-    let categorias = await fazerPergunta("Me fale as áreas da ti que você quer saber: ");
-    let prompt = await fazerPergunta("Me fale sobre o que você quer aprender sobre finanças da TI: ");
-    
-    const result = await chatSession.sendMessage(`${categorias} ${prompt}`);
-    console.log(result.response.text());
+
+      // Make sure to include these imports:
+// import { GoogleAIFileManager } from "@google/generative-ai/server";
+// import { GoogleGenerativeAI } from "@google/generative-ai";
+const fileManager = new GoogleAIFileManager(process.env.GOOGLE_API_KEY);
+
+const uploadResult = await fileManager.uploadFile(
+  `./Captura.png`,
+  {
+    mimeType: "image/png",
+    displayName: "Captura de tela",
+  },
+);
+// View the response.
+console.log(
+  `Uploaded file ${uploadResult.file.displayName} as: ${uploadResult.file.uri}`,
+);
+
+// Polling getFile to check processing complete
+let file = await fileManager.getFile(uploadResult.file.name);
+while (file.state === FileState.PROCESSING) {
+  process.stdout.write(".");
+  // Sleep for 10 seconds
+  await new Promise((resolve) => setTimeout(resolve, 10_000));
+  // Fetch the file from the API again
+  file = await fileManager.getFile(uploadResult.file.name);
+}
+if (file.state === FileState.FAILED) {
+  throw new Error("Audio processing failed.");
 }
 
-main().catch(console.error);*/
+let prompt = await fazerPergunta("Me fale o que deseja saber sobre a imagem e qual o formato devo retornar: ");
+
+
+const result = await model.generateContent([
+  `${prompt}`,
+  {
+    fileData: {
+      fileUri: uploadResult.file.uri,
+      mimeType: uploadResult.file.mimeType,
+    },
+  },
+]);
+console.log(result.response.text());
+
+
+    }
+
+processImagem().catch(console.error);

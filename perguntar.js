@@ -49,7 +49,10 @@ export async function perguntar(){
     let prompt = await fazerPergunta("Me fale sobre o que você quer aprender sobre finanças da TI: ");
     
     const result = await chatSession.sendMessage(`${categorias} ${prompt}`);
+//    console.log("Objeto de resposta: ", result);
     console.log(result.response.text());
+    console.log(`Total de tokens de entrada: ${result.response.usageMetadata.promptTokenCount}`);
+    console.log(`Quantidade de tokens de saída: ${result.response.usageMetadata.totalTokenCount}`);
 }
 
 perguntar().catch(console.error);
