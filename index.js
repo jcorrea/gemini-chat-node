@@ -1,10 +1,11 @@
 import { fazerPergunta } from "./pergunta.js";
 
 async function principal(){
-    let escolha = await fazerPergunta(`Escolha uma das opções abaixo: \n
-      1. Fazer uma pergunta sobre finanças da TI\n
-      2. Consultar sobre finanças da TI\n
-      3. Ver informações de imagem\n
+    let escolha = await fazerPergunta(`Escolha uma das opções abaixo: \n\n
+      \t1. Fazer uma pergunta sobre finanças da TI\n
+      \t2. Consultar sobre finanças da TI\n
+      \t3. Ver informações de imagem\n
+      \t4. Categorizar informações\n\n
       Opção desejada:`);
 
       if (escolha == 1){
@@ -15,8 +16,11 @@ async function principal(){
         const { consultar } = await import("./consultar.js");
         consultar();
       }else if (escolha == 3){
-          const { processImagem } = await import("./processimagem.js");
-          processImagem();
+        const { processImagem } = await import("./processimagem.js");
+        processImagem();
+      }else if (escolha == 4){
+        const { categorizador } = await import("./categorizador.js");
+        categorizador();
       }
       else{
         console.log("Opção inválida");

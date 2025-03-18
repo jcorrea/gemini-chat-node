@@ -1,0 +1,39 @@
+1: "Minha viagem à Itália foi uma experiência incrível! Comida deliciosa, paisagens deslumbrantes e pessoas acolhedoras. Mal posso esperar para voltar!"
+
+2: "Fui para a Itália esperando uma aventura cultural, mas acabei decepcionado. Os locais turísticos estavam lotados e sujos, e o serviço ao cliente deixou muito a desejar."
+
+3: "A Itália tem uma história rica e uma culinária deliciosa, mas minha experiência foi um pouco mista. Alguns aspectos foram maravilhosos, outros nem tanto."
+
+4: "Que viagem maravilhosa à Itália! As cidades históricas, as vinícolas, as praias... tudo foi perfeito. Mal posso esperar para explorar mais na próxima vez!"
+
+5: "A Itália parecia um destino de sonho, mas minha viagem foi arruinada por problemas de transporte e acomodação. Não recomendaria."
+
+6: "Visitar a Itália foi uma experiência interessante. Algumas partes foram incríveis, como Roma e Florença, mas outras foram um pouco decepcionantes."
+
+7: "Minha lua de mel na Itália foi mágica! A comida, o vinho, os passeios de gôndola em Veneza... tudo foi perfeito. Definitivamente um destino romântico!"
+
+8: "Me senti enganado pela fama da Itália. Os pontos turísticos estavam superlotados e os preços eram exorbitantes. Não valeu a pena."
+
+9: "A Itália tem uma beleza incomparável, mas minha experiência foi um pouco afetada pela falta de planejamento. Talvez eu precise voltar e tentar de novo."
+
+10: "Fui para a Itália com minha família e todos nós adoramos! Desde os museus de arte até as pizzas autênticas, cada momento foi memorável. Recomendo!"
+
+11: "Meu passeio pela Itália foi uma série de desapontamentos. Os monumentos estavam lotados, os vendedores eram insistentes e o calor era insuportável."
+
+12: "Minha viagem à Itália foi uma mistura de altos e baixos. Alguns dias foram incríveis, outros nem tanto. Acho que depende de onde você vai e do que espera."
+
+13: "A Itália é um país incrível, cheio de história e beleza. Minha viagem foi ótima, com comida deliciosa e pessoas amigáveis. Mal posso esperar para voltar!"
+
+14: "Minha experiência na Itália foi uma decepção. Os pontos turísticos estavam superlotados, os restaurantes eram caros e a qualidade do serviço deixou a desejar."
+
+15: "Visitar a Itália foi uma experiência interessante. Alguns momentos foram maravilhosos, outros não tanto. Acho que depende do que você está procurando."
+
+16: "Minha viagem à Itália foi incrível! As paisagens, a comida, a cultura... tudo foi além das minhas expectativas. Definitivamente recomendo este destino!"
+
+17: "Fui para a Itália esperando uma experiência autêntica, mas me deparei com multidões de turistas e preços inflacionados. Não era o que eu esperava."
+
+18: "Minha viagem à Itália foi uma mistura de emoções. Alguns momentos foram maravilhosos, outros nem tanto. Acho que depende muito da sua sorte e do seu planejamento."
+
+19: "A Itália é um país deslumbrante, cheio de história e cultura. Minha viagem foi incrível, com muita comida deliciosa e vistas espetaculares. Mal posso esperar para voltar!"
+
+20: "Minha viagem à Itália foi uma decepção total. Os pontos turísticos estavam lotados, os restaurantes eram caros e o serviço ao cliente deixava muito a desejar."
