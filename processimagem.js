@@ -56,4 +56,4 @@ export async function processImagem(){
 
 }
 
-processImagem().catch(console.error);
+//processImagem().catch(console.error);

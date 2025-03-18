@@ -52,4 +52,4 @@ export async function consultar(){
     console.log(result.response.text());
 }
 
-consultar().catch(console.error);
+//consultar().catch(console.error);

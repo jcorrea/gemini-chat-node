@@ -55,4 +55,4 @@ export async function perguntar(){
     console.log(`Quantidade de tokens de saída: ${result.response.usageMetadata.totalTokenCount}`);
 }
 
-perguntar().catch(console.error);
+//perguntar().catch(console.error);

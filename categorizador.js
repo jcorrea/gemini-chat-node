@@ -55,4 +55,4 @@ export async function categorizador(){
 
 }
 
-categorizador().catch(console.error);
+//categorizador().catch(console.error);
